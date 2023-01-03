@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :update_allowed_parameters, if: :devise_controller?
 
-   protected
+  protected
 
   def after_sign_out_path_for(_resource_or_scope)
     request.referrer
@@ -18,5 +18,4 @@ class ApplicationController < ActionController::Base
       u.permit(:name, :email, :password, :password_confirmation, :current_password, :confirmation_token)
     end
   end
-
 end
