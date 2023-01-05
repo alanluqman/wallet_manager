@@ -15,13 +15,11 @@ class CategoriesController < ApplicationController
     if new_category.save
       redirect_to user_categories_path(user_id: current_user.id)
     else
-      flash.alert = "Opps, Category does not created !"
+      flash.alert = 'Opps, Category does not created !'
     end
   end
 
-  def update
-  
-  end
+  def update; end
 
   def destroy; end
 
