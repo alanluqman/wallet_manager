@@ -21,7 +21,15 @@ class CategoriesController < ApplicationController
 
   def update; end
 
-  def destroy; end
+  def destroy
+    category = Category.find(params[:id])
+    category.transactions.each(&:destroy)
+    if category.destroy
+      redirect_to user_categories_path
+    else
+      flash.alert = 'Opps, Category does not Deleted !'
+    end
+  end
 
   private
 
