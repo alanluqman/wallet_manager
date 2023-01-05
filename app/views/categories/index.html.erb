@@ -1,6 +1,6 @@
 <div class = 'container'>
 <div class = 'd_flex align_cetner space_between'>
-  <%= link_to 'Add Category', user_categories_path, class: 'btn bg_blue heading_3 G-font desktop_cat_btn'%>
+  <%= link_to 'Add Category', new_user_category_path(user_id: current_user.id) , class: 'btn bg_blue heading_3 G-font desktop_cat_btn'%>
   <h1 class = 'G-font heading_1 text_center'>Categories</h1><br>
   <i class = 'desktop_cat_btn'></i>
 </div>

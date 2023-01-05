@@ -6,8 +6,11 @@
   </div>
   <hr>
   <div class = 'd_flex align_cetner space_between'>
-    <%= link_to 'New Transaction', new_user_transaction_path(user_id: current_user.id), class: 'btn bg_blue G-font heading_4' %>
+    <%= link_to 'Add', new_user_transaction_path(user_id: current_user.id), class: 'btn bg_blue G-font heading_4' %>
     <h2 class = 'G-font heading_4'>TOTAL PAYMENT : $ <%= @category.transactions.sum(:amount)%></h2>
+    <% if can? :destroy, @category %>
+      <%= button_to 'Delete', user_category_path(user_id: current_user.id, id: @category.id), method: :delete, class: 'btn bg_red delete_btn heading_4 G-font'%>
+    <% end %>
   </div> <br>
   <% if @tracsactions.empty?%>
     <%= image_tag("empty.webp", :alt => "back", class: 'empty_image')%>
@@ -21,6 +24,9 @@
         <div>
           <h3 class = 'G-font heading_3 text_center'>Amount : $ <%= trx.amount %></h3>
           <p class = 'G-font heading_5 '><%= trx.created_at %></p>
+          <% if can? :destroy, trx %>
+            <%= button_to 'Delete Transaction', user_transaction_path(user_id: current_user.id, id: trx.id), method: :delete, class: 'btn delete_btn heading_4 G-font color_red'%>
+          <% end %>
         </div>
       </div>
     <% end %>

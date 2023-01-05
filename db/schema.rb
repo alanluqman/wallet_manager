@@ -1,6 +1,6 @@
 # rubocop:disable Metrics/BlockLength
 
-ActiveRecord::Schema[7.0].define(version: 20_230_103_133_234) do
+ActiveRecord::Schema[7.0].define(version: 20_230_105_191_604) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -33,6 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 20_230_103_133_234) do
     t.string 'reset_password_token'
     t.datetime 'reset_password_sent_at'
     t.datetime 'remember_created_at'
+    t.string 'role', default: 'user'
     t.index ['email'], name: 'index_users_on_email', unique: true
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
@@ -41,5 +42,4 @@ ActiveRecord::Schema[7.0].define(version: 20_230_103_133_234) do
   add_foreign_key 'transactions', 'categories'
   add_foreign_key 'transactions', 'users', column: 'author_id'
 end
-
 # rubocop:enable Metrics/BlockLength
