@@ -1,15 +1,273 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+html {
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+}
+
+a {
+   text-decoration: none;
+   color: black;
+   width: fit-content;
+}
+
+.d_flex {
+  display: flex;
+}
+
+.d_flex_vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.align_cetner {
+  align-items: center;
+}
+
+.justify_center {
+  justify-content: center;
+}
+
+.space_between {
+  justify-content: space-between;
+}
+
+.gap_1 {
+  gap: 1rem;
+}
+
+.gap_2 {
+  gap: 2rem;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.w_fit_content {
+  width: fit-content;
+}
+
+.heading_1 {
+   font-size: 3rem;
+}
+
+.heading_2 {
+   font-size: 2.5rem;
+}
+
+.heading_3 {
+   font-size: 2rem;
+}
+
+.heading_4 {
+   font-size: 1.5rem;
+}
+
+.heading_5 {
+   font-size: 1.3rem;
+}
+
+/* ------------------------------- */
+.container {
+  max-width: 100rem;
+  margin: auto;
+  padding: 1rem;
+}
+
+.nav_link {
+  color: rgb(0, 0, 0);
+  padding: 0;
+  font-size: 1.5rem;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.mob_nav_link {
+   color: white;
+   font-size: 2rem;
+}
+
+ .logo {
+   width: 6rem;
+ }
+
+ .banner_logo {
+   width: 23rem;
+ }
+
+ .menu {
+   width: 3rem;
+   display: block;
+   cursor: pointer;
+ }
+
+ .wide_menu {
+   display: none;
+ }
+
+ .mobile_menu {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 2rem;
+   max-height: 0;
+   overflow: hidden;
+   background-color: #4785ff;
+   transition: all 0.5s ease-out;
+ }
+
+ .menu_line {
+   width: 50%;
+   background-color: white;
+ }
+
+ 
+ .menu_open {
+   max-height: 30rem;
+ }
+
+ .buttom_border {
+   border-bottom: 1px solid rgb(160, 159, 159);
+ }
+
+ .G-font {
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ }
+
+ .form {
+   max-width: 60rem;
+   margin: auto;
+ }
+
+ .f-feild {
+   margin: 3px 5px;
+   padding: 0.5rem;
+ }
+
+ .f-feild:focus {
+   outline: 4px solid #4784ff7e;
+   border-radius: 2px;
+   border: 0;
+ }
+
+ .login {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   height: 85vh;
+ }
+
+ .btn {
+   background-color: transparent;
+   border: 0;
+   border-radius: 5px;
+   cursor: pointer;
+   padding: 1rem 2rem;
+ }
+ .angle_left {
+   width: 3rem;
+   cursor: pointer;
+ }
+
+ .empty_image {
+   width: 100%;
+ }
+
+ .desktop_cat_btn {
+   display: none;
+ }
+
+ .add_category_mobile {
+   z-index: 10;
+   width: 4rem;
+   border-radius: 50%;
+   box-shadow: 0 0 1rem rgb(112, 255, 119);
+   animation-name: add_category_mobile;
+   animation-duration: 2s;
+   animation-iteration-count: infinite;
+   position: fixed;
+   bottom: 3rem;
+   right: 3rem;
+ }
+
+ .multi_select {
+   max-height: 20rem;
+   overflow: auto;
+ }
+
+ .bg_blue {
+   background-color: #4785ff;
+   color: white;
+ }
+
+ .color_blue {
+   color: #4785ff;
+ }
+
+ .category_card {
+   max-width: 60rem;
+   margin: 1.5rem auto;
+   padding: 0.5rem 1rem;
+   border-radius: 5px;
+   box-shadow: 0 0 1rem rgb(185, 185, 185);
+   transition: all 0.2s ease;
+ }
+
+ .category_card:hover {
+   scale: 1.03;
+ }
+
+
+ .category_icon {
+   width: 8rem;
+   height: 8rem;
+   padding: 2px;
+   box-shadow: 0 0 0.5rem rgb(211, 211, 211);
+   border-radius: 5px;
+ }
+
+@keyframes opening {
+   from {max-height: 0;}
+   to {max-height: 100%;}
+ }
+
+ @keyframes closing {
+   from {max-height: 100%;}
+   to {max-height: 0;}
+ }
+ 
+ @keyframes add_category_mobile {
+   0% {scale: 1;}
+   50% {scale: 1.1;}
+   100% {scale: 1;}
+ }
+
+ @media screen and (min-width: 700px) {
+  .menu {
+     display: none;
+  }
+
+  .wide_menu {
+   display: flex;
+  }
+
+  .menu_open {
+   max-height: 0;
+ }
+
+ .add_category_mobile {
+   display: none;
+ }
+
+ .desktop_cat_btn {
+   display: block;
+ }
+}
