@@ -1,2 +1,28 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<div class = 'container'>
+  <div class = 'd_flex align_cetner space_between'>
+    <%= link_to image_tag("angle-left.svg", :alt => "back", class: 'angle_left'), user_categories_path %>
+    <h1 class = 'G-font heading_3 text_center'>Categories / <%= @category.name %></h1>
+    <img src = <%= @category.icon %> alt = 'icon' class = 'category_icon' >
+  </div>
+  <hr>
+  <div class = 'd_flex align_cetner space_between'>
+    <%= link_to 'New Transaction', new_user_transaction_path(user_id: current_user.id), class: 'btn bg_blue G-font heading_4' %>
+    <h2 class = 'G-font heading_4'>TOTAL PAYMENT : $ <%= @category.transactions.sum(:amount)%></h2>
+  </div> <br>
+  <% if @tracsactions.empty?%>
+    <%= image_tag("empty.webp", :alt => "back", class: 'empty_image')%>
+  <% else %>
+    <% @tracsactions.each do |trx| %>
+      <div class = 'category_card d_flex align_cetner space_between'>
+        <div>
+          <h2 class = 'G-font heading_3 '>Transaction N°<%= trx.id %></h2>
+          <h3 class = 'G-font heading_3 '><%= trx.name %></h3>
+        </div>
+        <div>
+          <h3 class = 'G-font heading_3 text_center'>Amount : $ <%= trx.amount %></h3>
+          <p class = 'G-font heading_5 '><%= trx.created_at %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
