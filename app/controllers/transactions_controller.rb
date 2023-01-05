@@ -19,7 +19,15 @@ class TransactionsController < ApplicationController
 
   def update; end
 
-  def destroy; end
+  def destroy
+    trxn = Transaction.find(params[:id])
+    category_id = trxn.category_id
+    if trxn.destroy
+      redirect_to user_category_path(user_id: current_user.id, id: category_id)
+    else
+      flash.alert = 'Opps, Transaction does not Deleted !'
+    end
+  end
 
   private
 
