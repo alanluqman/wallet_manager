@@ -17,5 +17,6 @@ test:
 
 production:
   <<: *default
-  database: wallet_manager_production
+  # database: wallet_manager_production
+  url: <%= ENV['DATABASE_URL'] %>
 
