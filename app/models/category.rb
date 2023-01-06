@@ -2,5 +2,6 @@ class Category < ApplicationRecord
   belongs_to :author, class_name: 'User'
   has_many :transactions, class_name: 'Transaction', foreign_key: 'category_id'
 
-  validates :name, :icon, presence: { strict: true }
+  validates :name, presence: true, length: { maximum: 50 }
+  validates :icon, presence: true, length: { maximum: 250 }
 end

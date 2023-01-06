@@ -4,8 +4,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
-    @tracsactions = Transaction.where(category_id: params[:id]).order(created_at: :desc)
+    @category = Category.includes(:transactions).order(created_at: :desc).find(params[:id])
+    # @tracsactions = Transaction.where(category_id: params[:id]).order(created_at: :desc)
   end
 
   def new; end
