@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :categories, class_name: 'Category', foreign_key: 'author_id'
   has_many :transactions, class_name: 'Transaction', foreign_key: 'author_id'
 
-  validates :name, presence: true, length: { maximum: 100 }
-  validates :email, presence: true, length: { maximum: 130 }
+  validates :name, presence: { strict: true }, length: { maximum: 100 }
+  validates :email, presence: { strict: true }, length: { maximum: 130 }
   validates :password, presence: true
 end
