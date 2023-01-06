@@ -8,8 +8,6 @@ class CategoriesController < ApplicationController
     # @tracsactions = Transaction.where(category_id: params[:id]).order(created_at: :desc)
   end
 
-  def new; end
-
   def create
     new_category = current_user.categories.new(category_params)
     if new_category.save
@@ -18,8 +16,6 @@ class CategoriesController < ApplicationController
       flash.alert = 'Opps, Category does not created !'
     end
   end
-
-  def update; end
 
   def destroy
     category = Category.find(params[:id])

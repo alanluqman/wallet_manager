@@ -1,8 +1,4 @@
 class TransactionsController < ApplicationController
-  def index; end
-
-  def show; end
-
   def new
     @categories = current_user.categories
   end
@@ -16,8 +12,6 @@ class TransactionsController < ApplicationController
     end
     redirect_to user_categories_path(user_id: current_user.id)
   end
-
-  def update; end
 
   def destroy
     trxn = Transaction.find(params[:id])
