@@ -12,10 +12,10 @@
       <%= button_to 'Delete', user_category_path(user_id: current_user.id, id: @category.id), method: :delete, class: 'btn bg_red delete_btn heading_4 G-font'%>
     <% end %>
   </div> <br>
-  <% if @tracsactions.empty?%>
+  <% if @category.transactions.empty?%>
     <%= image_tag("empty.webp", :alt => "back", class: 'empty_image')%>
   <% else %>
-    <% @tracsactions.each do |trx| %>
+    <% @category.transactions.order(created_at: :desc).each do |trx| %>
       <div class = 'category_card d_flex align_cetner space_between'>
         <div>
           <h2 class = 'G-font heading_3 '>Transaction N°<%= trx.id %></h2>
