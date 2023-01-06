@@ -63,7 +63,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Coming Soon]()
+- [Visit](https://wallet-manager.onrender.com)
 
 ## 🎬 Video Demo 
 
