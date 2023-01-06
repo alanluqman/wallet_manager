@@ -65,7 +65,7 @@
 
 - [Coming Soon]()
 
-## Video Demo 
+## 🎬 Video Demo 
 
 - [Demonstration Video](https://www.loom.com/share/45fe6d90a2e0416984259ff8145e6cb6)
 
@@ -97,7 +97,7 @@ Clone this repository to your desired folder
 
 
 ```sh
-  cd my-folder
+  cd wallet_manager
   git clone https://github.com/alanluqman/wallet_manager.git
 ```
 
@@ -111,6 +111,15 @@ Install this project with:
   gem install
 ```
 
+### Create Database
+
+run these commands:
+
+```
+  rails db:create
+  
+  rails db:migrate
+```
 
 ### Usage
 
