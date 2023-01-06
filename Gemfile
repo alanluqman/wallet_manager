@@ -9,6 +9,7 @@ gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
+gem 'rack-cors'
 gem 'rails', '~> 7.0.4'
 gem 'rubocop'
 gem 'rubocop-rails'
@@ -16,7 +17,6 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-gem 'rack-cors'
 
 group :development, :test do
   gem 'bullet', group: 'development'
