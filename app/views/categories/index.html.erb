@@ -1,0 +1,26 @@
+<div class = 'container'>
+<div class = 'd_flex align_cetner space_between'>
+  <%= link_to 'Add Category', new_user_category_path(user_id: current_user.id) , class: 'btn bg_blue heading_3 G-font desktop_cat_btn'%>
+  <h1 class = 'G-font heading_1 text_center'>Categories</h1><br>
+  <i class = 'desktop_cat_btn'></i>
+</div>
+<% if @categories.empty? %>
+  <%= image_tag("empty.webp", :alt => "back", class: 'empty_image')%>
+<% else %>
+  <% @categories.each do |category| %>
+    <a href = "/users/<%= current_user.id%>/categories/<%= category.id %>">
+    <div class = 'category_card d_flex align_cetner space_between'>
+      <div class = 'd_flex align_cetner gap_1'>
+        <img src = <%= category.icon %> alt = 'icon' class = 'category_icon' >
+        <div>
+          <h2 class = 'G-font heading_2 '><%= category.name %></h2>
+          <p class = 'G-font heading_5 '><%= category.created_at %></p>
+        </div>
+      </div>
+      <p class = 'G-font heading_3 text_center'>$ <%= category.transactions.sum(:amount) %></p>
+    </div>
+    </a>
+  <% end %>
+<% end %>
+<%= link_to image_tag("plus_icon.webp", :alt => "add", class: 'add_category_mobile'), new_user_category_path(user_id: current_user.id) %>
+</div>

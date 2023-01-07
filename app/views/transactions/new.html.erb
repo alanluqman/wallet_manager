@@ -1,0 +1,16 @@
+
+<div class = 'container'>
+  <div class = 'd_flex align_cetner space_between'>
+    <%= link_to image_tag("angle-left.svg", :alt => "back", class: 'angle_left'), :back %>
+    <h1 class = 'G-font heading_3 text_center'>Create New Transaction</h1>
+    <i></i>
+  </div>
+  <hr>
+  <br>
+  <%= form_with model: @transactions, local: true, url: user_transactions_path , class: 'form d_flex_vertical gap_2' do |f| %>
+    <%= f.text_field :name, autofocus: true, placeholder: 'Transaction Name' , required: true, class: 'f-feild heading_3'  %>
+    <%= f.text_field :amount, placeholder: 'Amount' , required: true, class: 'f-feild heading_3'  %>
+    <%= f.select :group_id, @categories.order(:name).pluck(:name, :id), {}, {:multiple => true, required:true, :id => "categories", :class => "f-feild heading_3 multi_select" } %>
+    <%= f.submit "Create Transaction" , class: 'btn bg_blue heading_4' %> 
+  <% end %>
+</div>
