@@ -65,10 +65,6 @@
 
 - [Visit](https://wallet-manager.onrender.com)
 
-## 🎬 Video Demo 
-
-- [Demonstration Video](https://www.loom.com/share/45fe6d90a2e0416984259ff8145e6cb6)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
