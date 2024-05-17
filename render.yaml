@@ -3,6 +3,7 @@ databases:
     ipAllowList: []
     databaseName: wallet_manager_development
     user: alan
+    plan: free
 
 services:
   - type: web
